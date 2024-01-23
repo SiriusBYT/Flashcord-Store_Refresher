@@ -46,8 +46,8 @@ def GetCode(GetWhat):
             Results = CallAPI("UserPlugins",str(Users[cycle]))
         elif GetWhat == "Themes":
             Results = CallAPI("UserThemes",str(Users[cycle]))
-        Results = Results.replace("[","").replace("]","").replace('"','').replace(" ","").split(",")
         if Results != None:
+            Results = Results.replace("[","").replace("]","").replace('"','').replace(" ","").split(",")
             for cycle in range (len(API_Folders)):
                 API_Folders[cycle] = API_Folders[cycle] + "-files"
                 HTMLCode = HTMLCode + '<iframe class="Flashcord-Module_Embed" src="store/modules/' + Users[cycle] + Results[cycle] + '/embed.html"></iframe>\n'

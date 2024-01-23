@@ -9,6 +9,7 @@ def FlashClient_API_Request(API_Request):
     print(f'[Flashstore API // Client] INFO: Attempting to communicate with the FlashStore API...')
     # Server Information
     ServerAddress = "aura-two.sirio-network.com"
+    #ServerAddress = socket.gethostname()
     ServerPort = 1407
     PacketSize = 1024
     RemoteServer = socket.socket()
