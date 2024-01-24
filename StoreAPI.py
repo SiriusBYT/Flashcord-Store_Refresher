@@ -45,7 +45,6 @@ def FlashClient_API_Request(API_Request):
                         RemoteServer_Response = RemoteServer.recv(PacketSize).decode()
                         if RemoteServer_Response == "":
                             if DebugMode == True: print("Server didn't send new data.")
-                            time.sleep(1)
                         elif RemoteServer_Response != "DONE":
                             print(f'[Flashstore API // Client] Server filled our request with the data "{RemoteServer_Response}".')
                             Data = RemoteServer_Response

@@ -2,15 +2,16 @@ from StoreAPI import *
 import time
 import random
 import math
+import socket
 
 def RefreshStore():
     StartTime = time.time()
-
+    SpamDelay = 0.1
     API_Version = "2.01"
     Copyright_Date = "2024"
 
     Last_Update_Time = time.localtime()
-    Last_Update_String = f"{Last_Update_Time.tm_hour}:{Last_Update_Time.tm_min}:{Last_Update_Time.tm_sec} {Last_Update_Time.tm_mday}/{Last_Update_Time.tm_mon}/{Last_Update_Time.tm_year}"
+    Last_Update_String = f"{Last_Update_Time.tm_hour}:{Last_Update_Time.tm_min} - {Last_Update_Time.tm_mday}/{Last_Update_Time.tm_mon}/{Last_Update_Time.tm_year}"
 
     # NOT recommended to modify, do this only if you know what you're doing! 
     StoreTemplate = "store/templates/store_template.html"
@@ -38,7 +39,7 @@ def RefreshStore():
         InitTime = time.time()
         FlashClient_API_Request("GET")
         Latency = math.floor((time.time() - InitTime) * 1000)
-        Latency_String = str(Latency) + "ms"
+        Latency_String = str(Latency) + "ms (from " + socket.gethostname() + ")"
         return Latency_String
     API_Latency = GetAPILatency()
 
