@@ -7,11 +7,11 @@ import socket
 def RefreshStore():
     StartTime = time.time()
     SpamDelay = 0.1
-    API_Version = "2.01"
+    API_Version = "2.02"
     Copyright_Date = "2024"
 
     Last_Update_Time = time.localtime()
-    Last_Update_String = f"{Last_Update_Time.tm_hour}:{Last_Update_Time.tm_min} - {Last_Update_Time.tm_mday}/{Last_Update_Time.tm_mon}/{Last_Update_Time.tm_year}"
+    Last_Update_String = f"{Last_Update_Time.tm_hour:02d}:{Last_Update_Time.tm_min:02d}:{Last_Update_Time.tm_sec:02d} - {Last_Update_Time.tm_mday:02d}/{Last_Update_Time.tm_mon:02d}/{Last_Update_Time.tm_year}"
 
     # NOT recommended to modify, do this only if you know what you're doing! 
     StoreTemplate = "store/templates/store_template.html"
@@ -75,6 +75,7 @@ def RefreshStore():
             elif GetWhat == "Themes":
                 Results = CallAPI("UserThemes",str(Users[cycle]))
             if Results != None:
+                Results = str(Results)
                 Results = Results.replace("[","").replace("]","").replace('"','').replace(" ","").split(",")
                 for subcycle in range (len(Results)):
                     TotalX.append(Users[cycle] + "/" + Results[subcycle] + "-files")
@@ -124,8 +125,8 @@ def RefreshStore():
                 with open(HTMLFile, 'r', encoding='utf-8') as EditHTML_File:
                     BuildData = EditHTML_File.readlines()
                 with open(HTMLFile, 'w', encoding='utf-8') as EditHTML_File:
-                    BuildTime = math.floor(time.time() - StartTime)
-                    BuildTime_String = str(BuildTime) + " seconds"
+                    BuildTime = math.floor((time.time() - StartTime)*1000)
+                    BuildTime_String = str(BuildTime) + " mili-seconds"
                     BuildData[70] = f'                        <p>Build time: {BuildTime_String}</p>\n'
                     EditHTML_File.writelines(BuildData)
     HTMLConfigurator(False)
