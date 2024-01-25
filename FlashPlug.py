@@ -1,0 +1,90 @@
+import urllib.request, json 
+
+def Replugged_API(GetWhat):
+    if GetWhat == "Plugins":
+        RepluggedAPI = "https://replugged.dev/api/store/list/plugin?page=1&items=100"
+    else:
+        RepluggedAPI = "https://replugged.dev/api/store/list/theme?page=1&items=100"
+    API = urllib.request.Request(
+        RepluggedAPI, 
+        data=None, 
+        headers={'User-Agent': ''}
+    )
+    API_Result = json.load(urllib.request.urlopen(API))
+    API_ResultKey = API_Result["results"]
+
+    Current_Year = "2024"
+
+    HTMLCode = ""
+    for cycle in range (len(API_ResultKey)):
+        Addon = Addon_Name = Addon_Description = Addon_Version = Addon_AuthorKey = Addon_Contributors = Addon_ImageKey = Addon_Image = Addon_GitHubRepo = Addon_ID = Addon_Install = Addon_Page = Addon_AuthorGitHub = ""
+
+        Addon = API_ResultKey[cycle]
+        Addon_Name = Addon["name"]
+        Addon_Description = Addon["description"]
+        Addon_Version = Addon["version"]
+        Addon_AuthorKey = Addon["author"]
+        try:
+            Addon_Author = Addon_AuthorKey["github"]
+            Addon_Contributors = "None"
+        except:
+            Addon_Contributors = []
+            for subcycle in range (len(Addon_AuthorKey)):
+                if subcycle == 1:
+                    Addon_Author = Addon_AuthorKey[subcycle]
+                else:
+                    Addon_Contributors.append(Addon_AuthorKey[subcycle])
+        try:
+            Addon_ImageKey = Addon["image"]
+            if Addon_ImageKey[0] == "h":
+                Addon_Image = Addon["image"]
+            else:
+                Addon_Image = Addon_ImageKey[0]
+        except:
+            Addon_Image = "https://sirio-network.com/sbin/This is fine.png"
+        try:
+            Addon_GitHubRepo = Addon["source"]
+        except:
+            Addon_GitHubRepo = "https://sirio-network.com/404"
+        Addon_ID = Addon["id"]
+        Addon_Install = f"https://replugged.dev/install?identifier={Addon_ID}"
+        Addon_Page = f"https://replugged.dev/store/{Addon_ID}"
+        Addon_AuthorGitHub = f"https://github.com/{Addon_Author}"
+        Addon_License = Addon["license"]
+        """
+        print(Addon_Name)
+        print(Addon_Description)
+        print(Addon_Version)
+        print(Addon_Author)
+        print(Addon_AuthorGitHub)
+        print(Addon_Contributors)
+        print(Addon_Image)
+        print(Addon_GitHubRepo)
+        print(Addon_ID)
+        print(Addon_Install)
+        print(Addon_Page)
+        print("\n")
+        """
+        HTMLCode = HTMLCode + f'<div class="Replugged-Addon">\n\
+        <img class="Replugged-Addon_Banner" src="{Addon_Image}"></img>\n\
+        <div class="Flashcord-Module_Info">\n\
+            <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
+                <a target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
+                <a target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
+            </div>\n\
+            <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
+                <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
+                <a target="_blank" href="[DISCORD_LINK]"><h2>💬</h2></a>\n\
+            </div>\n\
+            <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
+            <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
+            <p>{Addon_Description}</p>\n\
+            <button class="SNDL-BC_Info">\n\
+                <a href="{Addon_Install}">\n\
+                    <p>Click to Install</p>\n\
+                </a>\n\
+            </button>\n\
+            <a target="_blank" href="{Addon_GitHubRepo}"><p class="SNDL-Copyright">{Addon_Author} © {Current_Year} - {Addon_Name} | {Addon_License}</p></a>\n\
+        </div>\n\
+    </div>\n'
+    return HTMLCode

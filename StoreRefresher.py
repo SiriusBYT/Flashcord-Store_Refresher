@@ -1,4 +1,5 @@
 from StoreAPI import *
+from FlashPlug import *
 import time
 import random
 import math
@@ -96,6 +97,8 @@ def RefreshStore():
     ModuleCode = GetCode("Modules")
     PluginCode = GetCode("Plugins")
     ThemesCode = GetCode("Themes")
+    Replugged_Plugins = Replugged_API("Plugins")
+    Replugged_Themes = Replugged_API("Themes")
     #print(ModuleCode)
     #print(PluginCode)
     #print(ThemesCode)
@@ -112,12 +115,14 @@ def RefreshStore():
                         # print('[FlashCGG] Processing Line"', line, '" which is "', HTMLArray[line], '".')
                         HTMLArray[line] = HTMLArray[line].replace("[SPLASH_TEXT]", SplashText_Selected)
                         HTMLArray[line] = HTMLArray[line].replace("[FLASHCORD_OFFICIAL-MODULES]", ModuleCode)
-                        HTMLArray[line] = HTMLArray[line].replace("[REPLUGGED_PLUGINS]", PluginCode)
+                        HTMLArray[line] = HTMLArray[line].replace("[FLASHCORD_PLUGINS]", PluginCode)
                         HTMLArray[line] = HTMLArray[line].replace("[NON-FLASHCORD_THEMES]", ThemesCode)
                         HTMLArray[line] = HTMLArray[line].replace("[API_VERSION]", API_Version)
                         HTMLArray[line] = HTMLArray[line].replace("[API_LATENCY]", API_Latency)
                         HTMLArray[line] = HTMLArray[line].replace("[LAST_UPDATE]", Last_Update_String)
                         HTMLArray[line] = HTMLArray[line].replace("[COPYRIGHT_DATE]", Copyright_Date)
+                        HTMLArray[line] = HTMLArray[line].replace("[REPLUGGED_PLUGINS]", Replugged_Plugins)
+                        HTMLArray[line] = HTMLArray[line].replace("[REPLUGGED_THEMES]", Replugged_Themes)
                         EditHTML_File.write(HTMLArray[line])
                         ProcessingProgress = ((line+1)/len(HTMLArray))*100
                         print('[FlashCFG // HTML-CFG] Processed Line', line+1, '/', len(HTMLArray), '(', ProcessingProgress, '%).')
