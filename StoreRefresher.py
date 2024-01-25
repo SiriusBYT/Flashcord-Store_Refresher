@@ -126,7 +126,7 @@ def RefreshStore():
                     BuildData = EditHTML_File.readlines()
                 with open(HTMLFile, 'w', encoding='utf-8') as EditHTML_File:
                     BuildTime = math.floor((time.time() - StartTime)*1000)
-                    BuildTime_String = str(BuildTime) + " mili-seconds"
+                    BuildTime_String = str(BuildTime) + " milliseconds"
                     BuildData[70] = f'                        <p>Build time: {BuildTime_String}</p>\n'
                     EditHTML_File.writelines(BuildData)
     HTMLConfigurator(False)
