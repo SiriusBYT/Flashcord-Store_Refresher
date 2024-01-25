@@ -45,7 +45,6 @@ def RefreshStore():
 
     def GetCode(GetWhat):
         HTMLCode = ''
-        API_Folders = []
         def CallAPI(GetWhat, User):
             if GetWhat == "Modules":
                 API_Request = "GET/" + "MODULES"
@@ -65,17 +64,17 @@ def RefreshStore():
             return RequestResults
         Users = CallAPI("Users", "None")
         Users = Users.replace("[","").replace("]","").replace("'","").replace(" ","").split(",")
+        Users.sort()
         TotalX = []
         for cycle in range (len(Users)):
-            time.sleep(1)
+            Results = []
             if GetWhat == "Modules":
                 Results = CallAPI("UserModules",str(Users[cycle]))
             elif GetWhat == "Plugins":
                 Results = CallAPI("UserPlugins",str(Users[cycle]))
             elif GetWhat == "Themes":
                 Results = CallAPI("UserThemes",str(Users[cycle]))
-            if Results != None:
-                Results = str(Results)
+            if len(Results) != 0:
                 Results = Results.replace("[","").replace("]","").replace('"','').replace(" ","").split(",")
                 for subcycle in range (len(Results)):
                     TotalX.append(Users[cycle] + "/" + Results[subcycle] + "-files")
@@ -88,9 +87,10 @@ def RefreshStore():
             EmbedType = "themes"
         if TotalX != []:
             for cycle in range (len(TotalX)):
+                print(TotalX[cycle])
                 HTMLCode = HTMLCode + '<iframe class="Flashcord-Module_Embed" src="store/' + EmbedType + '/' + TotalX[cycle] + '/embed.html"></iframe>\n'
         else:
-            HTMLCode = "<h3>It's bloody empty in here!</h3>\n"
+            HTMLCode = "<h1>It's bloody empty in here!</h1>\n"
         return HTMLCode
 
     ModuleCode = GetCode("Modules")
