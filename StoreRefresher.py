@@ -9,7 +9,7 @@ def RefreshStore():
     StartTime = time.time()
     SpamDelay = 0.1
     API_Version = "2.02"
-    Copyright_Date = "2024"
+    Copyright_Date = "2021-2024"
 
     Last_Update_Time = time.localtime()
     Last_Update_String = f"{Last_Update_Time.tm_hour:02d}:{Last_Update_Time.tm_min:02d}:{Last_Update_Time.tm_sec:02d} - {Last_Update_Time.tm_mday:02d}/{Last_Update_Time.tm_mon:02d}/{Last_Update_Time.tm_year}"
@@ -26,7 +26,22 @@ def RefreshStore():
         "Still without Javascript!",
         "The Discount Replugged Store™️",
         "Without working search bars!",
-        "now with more yaes than mikos! \n - Atacantul, 2024 (from GangChat)"
+        "now with more yaes than mikos! \n- Atacantul, 2024 (from GangChat)",
+        "Better than the Replugged Store!",
+        "Now with Images! Unlike Replugged...",
+        "Updated every hour!",
+        "Made with <3 by SiriusBYT",
+        "2ms API Latency... From the local network. Seems legit.",
+        ">Access Denied\n>:(",
+        ">404\n >:(",
+        "Powered by Sirius' broken Python code!",
+        "No longer The Discount Replugged Store™️",
+        "subscribe to siriusbyt",
+        "East_Arctica is a cool guy.\nLiterally.",
+        "Atacantul is an attacker.\nLiterally.",
+        "forg-less!",
+        "we killed the replugged forg",
+        "Themes other than Flashcord?!\nON THE FLASHCORD STORE?!?!\nWHAT KIND OF MARKETING STRATEGY IS THIS?!?"
     ]
     SplashText_Length = len(SplashText) - 1
     SplashSeed = random.randint(0,SplashText_Length)

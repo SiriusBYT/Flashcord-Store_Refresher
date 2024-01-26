@@ -8,7 +8,7 @@ def Replugged_API(GetWhat):
     API = urllib.request.Request(
         RepluggedAPI, 
         data=None, 
-        headers={'User-Agent': ''}
+        headers={'User-Agent': 'Flashplug-Store/1.01'}
     )
     API_Result = json.load(urllib.request.urlopen(API))
     API_ResultKey = API_Result["results"]
@@ -31,9 +31,11 @@ def Replugged_API(GetWhat):
             Addon_Contributors = []
             for subcycle in range (len(Addon_AuthorKey)):
                 if subcycle == 1:
-                    Addon_Author = Addon_AuthorKey[subcycle]
+                    Addon_AuthorSubKey = Addon_AuthorKey[subcycle]
+                    Addon_Author = Addon_AuthorSubKey["name"]
                 else:
-                    Addon_Contributors.append(Addon_AuthorKey[subcycle])
+                    Addon_AuthorSubKey = Addon_AuthorKey[subcycle]
+                    Addon_Contributors.append(Addon_AuthorSubKey["name"])
         try:
             Addon_ImageKey = Addon["image"]
             if Addon_ImageKey[0] == "h":
@@ -74,7 +76,6 @@ def Replugged_API(GetWhat):
             </div>\n\
             <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
                 <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
-                <a target="_blank" href="[DISCORD_LINK]"><h2>💬</h2></a>\n\
             </div>\n\
             <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
             <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\

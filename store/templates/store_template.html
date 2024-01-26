@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" class="SNDL-Dark">
     <head>
         <title>The Flashcord Store</title>
         <!-- SNWE SEO -->
         <meta name="description" content="Welcome to the Flashcord Store! Get your favorite Flashcord official or community addons here! This is also a complete replacement to the Replugged's Store! Find all your Themes and Plugins with ease, even those not approved by Replugged! And, yes, with actual images to aid your search, unlike a certain other store.">
         <meta name="author" content="SiriusBYT">
+        <meta name="keywords" content="Flashcord, Discord, Replugged, Vencord, BetterDiscord, Store, Addons, Addon, Module, Plugin, Theme, Themes, Plugins, Free, Discord Client Mod, Mod, Client Mod, HTML, CSS, JavaScript">
         <!-- SNWE Embed -->
         <meta content="The Flashcord Store" property="og:title" />
         <meta content="Welcome to the Flashcord Store! Get your favorite Flashcord official or community addons here! This is also a complete replacement to the Replugged's Store! Find all your Themes and Plugins with ease, even those not approved by Replugged! And, yes, with actual images to aid your search, unlike a certain other store." property="og:description" />
@@ -14,7 +15,6 @@
         <meta name="twitter:card" content="summary_large_image">
         <!-- SNWE External-->
         <link rel="stylesheet" href="../bin/SNDL-App_Base.css">
-        <link rel="stylesheet" href="../bin/SNDL-App_Dark.css">
         <link rel="stylesheet" href="../bin/SNDL-Flashcord.css">
         <script src="../bin/SNDL-Flashcord.js"></script> 
         <link rel="icon" type="image/x-icon" href="https://sirio-network.com/sbin/SGN-SNDL_FULL.png">
@@ -25,7 +25,7 @@
 
     <body>
         <div class="FakeRoot">
-            <nav>
+            <nav class="Nav-Animation">
                 <a href="https://sirio-network.com/home" class="SNDL-Nav_Banner"><img src="../sbin/Flashcord/SNDL-Flashcord.png"></img></a>
                 <div class="SNDL-Nav_Links">
                     <div class="SNDL-Nav_Link"><a href="https://sirio-network.com/youtube.html"><p>SiriusBYT</p><p>SBYT</p></a></div>
@@ -37,10 +37,10 @@
             </nav>
 
             <div class="SNDL-WarningBanner">
-                <p>⚠️ The Flashcord Store is <strong>UNFINISHED</strong>.</p>
+                <p>⚠️ The Flashcord Store is <strong>UNFINISHED</strong>, Chorme-based web browsers may have issues displaying this page.</p>
             </div>
 
-            <div class="Userspace">
+            <div class="Userspace Userspace-Animation">
                 
                 <div class="Flashcord-Introduction">
                     <div class="Flashcord-IntroIMG">
@@ -49,9 +49,9 @@
                     <div class="Flashcord-IntroText">
                         <h1>Welcome to the Flashcord Store!</h1>
                         <h3 class="Flashcord-Splash" style="margin-top: -2rem; margin-bottom: -1rem;">[SPLASH_TEXT]</h3>
-                        <p>Get your favorite Flashcord official or community addons here!</p>
-                        <p>You'll also find all the Replugged Plugins/Themes including those who didn't get approved!</p>
-                        <p>To install a module/plugin, click their name and then follow the instructions.</p>
+                        <p>Get your favorite <b>Flashcord official or community addons</b> here!</p>
+                        <p>You'll also <b>find all the Replugged Plugins/Themes</b>, <i>including those who didn't get approved</i>!</p>
+                        <p>To <b>install a module/plugin, click their name</b> and then follow the instructions.</p>
                         <div class="SNDL-Quote SNDL-BC_Warning">
                             <div>
                                 <h3 style="text-align: left;">⚠️ PLEASE NOTE:</h3>
@@ -74,7 +74,7 @@
 
                 <p class="SNDL-LineSpacer_H"></p>
                 <div style="padding: 1rem;">
-                    <div class="SNDL-Striped_Background SNDL-Background_MvX" style="background-color: red; background-size: cover; margin-bottom: 1rem;">
+                    <div class="SNDL-Striped_Background SNDL-Background_MvX" style="background-color: red; margin-bottom: 1rem;">
                         <div style="text-align: center;">
                             <h1>⚠️ The Flashcord Store is <strong>CURRENTLY UNDER A MAJOR FILE STRUCTURE CHANGE</strong>.</h1>
                             <h2>Most if not all modules or plugins are not available!</h1>
@@ -82,7 +82,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="SNDL-LineSpacer_H"></p>
 
                 <p class="SNDL-LineSpacer_H"></p>
                 <div class="SNDL-Quick_FlexGrid SNDL-Auto_Flex">
@@ -130,8 +129,15 @@
                     [FLASHCORD_PLUGINS]
                 </div>
 
-                <h3>Replugged Store Plugins</h3>
+                <h2>Replugged Store Plugins</h2>
                 <p>Just your regular Replugged Plugins, now on the Flashcord Store! Simply browse and click install on plugins that might interest you.</p>
+                <div class="SNDL-Quote SNDL-BC_Info">
+                    <div>
+                        <h3>Notice:</h3>
+                        <p>You will be redirected to Replugged's website if you are installing a plugin or viewing their store page.</p>
+                        <p>Replugged doesn't let their client install plugins from any website other than their Website or GitHub.</p>
+                    </div>
+                </div>
                 <input class="SNDL-SearchInput" type="text" placeholder="Search Plugins by Name [DOES NOT WORK CURRENTLY]">
                 <div class="SNDL-Quick_FlexGrid SNDL-Contain_Light">
                     [REPLUGGED_PLUGINS]
@@ -147,8 +153,15 @@
                     [NON-FLASHCORD_THEMES]
                 </div>
 
-                <h3>Replugged Store Themes</h3>
+                <h2>Replugged Store Themes</h2>
                 <p>Just your regular Replugged Themes, now on the Flashcord Store! Simply browse and click install on themes that might interest you.</p>
+                <p>Unlike the Replugged Store, you may actually see what themes look like without having to mindlessly click on every single theme.</p>
+                <div class="SNDL-Quote SNDL-BC_Info">
+                    <div>
+                        <p>You will be redirected to Replugged's website if you are installing a plugin or viewing their store page.</p>
+                        <p>Replugged doesn't let their client install plugins from any website other than their Website or GitHub.</p>
+                    </div>
+                </div>
                 <input class="SNDL-SearchInput" type="text" placeholder="Search Plugins by Name [DOES NOT WORK CURRENTLY]">
                 <div class="SNDL-Quick_FlexGrid SNDL-Contain_Light">
                     [REPLUGGED_THEMES]
@@ -156,6 +169,9 @@
 
                 <div class="SNDL-Copyright">
                     <p>SiriusBYT © [COPYRIGHT_DATE] - Sirio Network Website | CC-BY-ND-NC 4.0</p>
+                </div>
+                <div class="SNDL-Copyright">
+                    <p>Flashcord is not affiliated or endorsed by Discord. Discord is a trademark of Discord Inc.</p>
                 </div>
             </div>
         </div>
