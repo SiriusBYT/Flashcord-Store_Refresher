@@ -68,7 +68,7 @@ def Replugged_API(GetWhat):
         print("\n")
         """
         HTMLCode = HTMLCode + f'                    <div class="Replugged-Addon">\n\
-                            <img class="Replugged-Addon_Banner" src="{Addon_Image}"></img>\n\
+                            <img class="Replugged-Addon_Banner" src="{Addon_Image}" crossorigin="anonymous" referrerpolicy="no-referrer"></img>\n\
                             <div class="Flashcord-Module_Info">\n\
                                 <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
                                     <a target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
