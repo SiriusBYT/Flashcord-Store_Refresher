@@ -53,6 +53,8 @@ def Replugged_API(GetWhat):
         Addon_Page = f"https://replugged.dev/store/{Addon_ID}"
         Addon_AuthorGitHub = f"https://github.com/{Addon_Author}"
         Addon_License = Addon["license"]
+        Addon_Contributors = str(Addon_Contributors)
+        Addon_Contributors = Addon_Contributors.replace("[","").replace("]","").replace("'","")
         """
         print(Addon_Name)
         print(Addon_Description)
