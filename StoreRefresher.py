@@ -23,17 +23,17 @@ def RefreshStore():
     SplashText = [
         "Oh look, a splash text!",
         "Now built thanks to the Flashstore API!",
-        "Still without Javascript!",
+        "Still without Javascript! \n ...oh wait now there is.",
         "The Discount Replugged Store™️",
-        "Without working search bars!",
+        "Without working search bars! \nWaitn they finally work..?",
         "now with more yaes than mikos! \n- Atacantul, 2024 (from GangChat)",
         "Better than the Replugged Store!",
         "Now with Images! Unlike Replugged...",
         "Updated every hour!",
-        "Made with <3 by SiriusBYT",
-        "2ms API Latency... From the local network. Seems legit.",
+        "Made with &lt3 by SiriusBYT",
+        "2ms API Latency... Seems legit.",
         ">Access Denied\n>:(",
-        ">404\n >:(",
+        ">404\n &gt:(",
         "Powered by Sirius' broken Python code!",
         "No longer The Discount Replugged Store™️",
         "subscribe to siriusbyt",
@@ -41,7 +41,8 @@ def RefreshStore():
         "Atacantul is an attacker.\nLiterally.",
         "forg-less!",
         "we killed the replugged forg",
-        "Themes other than Flashcord?!\nON THE FLASHCORD STORE?!?!\nWHAT KIND OF MARKETING STRATEGY IS THIS?!?"
+        "Themes other than Flashcord?!\nON THE FLASHCORD STORE?!?!\nWHAT KIND OF MARKETING STRATEGY IS THIS?!?",
+        "Only took 6 months to have working search bars!"
     ]
     SplashText_Length = len(SplashText) - 1
     SplashSeed = random.randint(0,SplashText_Length)
