@@ -104,7 +104,7 @@ def RefreshStore():
         if TotalX != []:
             for cycle in range (len(TotalX)):
                 print(TotalX[cycle])
-                HTMLCode = HTMLCode + '<iframe class="Flashcord-Module_Embed" src="store/' + EmbedType + '/' + TotalX[cycle] + '/embed.html"></iframe>\n'
+                HTMLCode = HTMLCode + '                    <iframe class="Flashcord-Module_Embed" src="store/' + EmbedType + '/' + TotalX[cycle] + '/embed.html"></iframe>\n'
         else:
             HTMLCode = "<h1>It's bloody empty in here!</h1>\n"
         return HTMLCode

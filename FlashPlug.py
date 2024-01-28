@@ -67,25 +67,25 @@ def Replugged_API(GetWhat):
         print(Addon_Page)
         print("\n")
         """
-        HTMLCode = HTMLCode + f'<div class="Replugged-Addon">\n\
-        <img class="Replugged-Addon_Banner" src="{Addon_Image}"></img>\n\
-        <div class="Flashcord-Module_Info">\n\
-            <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
-                <a target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
-                <a target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
-            </div>\n\
-            <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
-                <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
-            </div>\n\
-            <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
-            <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
-            <p>{Addon_Description}</p>\n\
-            <button class="SNDL-BC_Info">\n\
-                <a href="{Addon_Install}">\n\
-                    <p>Click to Install</p>\n\
-                </a>\n\
-            </button>\n\
-            <a target="_blank" href="{Addon_GitHubRepo}"><p class="SNDL-Copyright">{Addon_Author} © {Current_Year} - {Addon_Name} | {Addon_License}</p></a>\n\
-        </div>\n\
-    </div>\n'
+        HTMLCode = HTMLCode + f'                    <div class="Replugged-Addon">\n\
+                            <img class="Replugged-Addon_Banner" src="{Addon_Image}"></img>\n\
+                            <div class="Flashcord-Module_Info">\n\
+                                <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
+                                    <a target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
+                                    <a target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
+                                </div>\n\
+                                <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
+                                    <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
+                                </div>\n\
+                                <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
+                                <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
+                                <p>{Addon_Description}</p>\n\
+                                <button class="SNDL-BC_Info">\n\
+                                    <a href="{Addon_Install}">\n\
+                                        <p>Click to Install</p>\n\
+                                    </a>\n\
+                                </button>\n\
+                                <a target="_blank" href="{Addon_GitHubRepo}"><p class="SNDL-Copyright">{Addon_Author} © {Current_Year} - {Addon_Name} | {Addon_License}</p></a>\n\
+                            </div>\n\
+                    </div>\n'
     return HTMLCode
