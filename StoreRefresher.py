@@ -18,7 +18,7 @@ def RefreshStore():
     StoreTemplate = "store/templates/store_template.html"
     HTMLFile = ""
 
-    SplashText_Selected = Flashcord_API_Client("GET/SPLASH_TEXT")
+    SplashText_Selected = Flashcord_API_Client("GET/SPLASH_TEXT").replace(">", "&gt").replace("<", "&lt")
 
     def GetCode():
         InitTime = time.time()

@@ -89,7 +89,7 @@ def Replugged_API(GetWhat):
                                 <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
                                 <p>{Addon_Description}</p>\n\
                                 <button class="SNDL-BC_Info" onclick="{AddStat_Installs}">\n\
-                                    <a href="{Addon_Install}">\n\
+                                    <a href="{Addon_Install}" target="_blank">\n\
                                         <p>⬇️ Install</p>\n\
                                     </a>\n\
                                 </button>\n\
