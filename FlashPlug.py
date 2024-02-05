@@ -1,4 +1,5 @@
 import urllib.request, json 
+from Flashcord_API_Client import Flashcord_API_Client
 
 def Replugged_API(GetWhat):
     if GetWhat == "Plugins":
@@ -8,7 +9,7 @@ def Replugged_API(GetWhat):
     API = urllib.request.Request(
         RepluggedAPI, 
         data=None, 
-        headers={'User-Agent': 'Flashplug-Store/1.01'}
+        headers={'User-Agent': 'Flashplug-Store/1.1'}
     )
     API_Result = json.load(urllib.request.urlopen(API))
     API_ResultKey = API_Result["results"]
@@ -55,6 +56,10 @@ def Replugged_API(GetWhat):
         Addon_License = Addon["license"]
         Addon_Contributors = str(Addon_Contributors)
         Addon_Contributors = Addon_Contributors.replace("[","").replace("]","").replace("'","")
+        Addon_Views = Flashcord_API_Client(f"GET/VIEWS/{Addon_ID}")
+        Addon_Installs = Flashcord_API_Client(f"GET/INSTALLS/{Addon_ID}")
+        AddStat_Views = f"Flashcord_API_Client('ADD_STAT/VIEWS/{Addon_ID}')"
+        AddStat_Installs = f"Flashcord_API_Client('ADD_STAT/INSTALLS/{Addon_ID}')"
         """
         print(Addon_Name)
         print(Addon_Description)
@@ -73,18 +78,19 @@ def Replugged_API(GetWhat):
                             <img class="Replugged-Addon_Banner" src="{Addon_Image}" crossorigin="anonymous" referrerpolicy="no-referrer"></img>\n\
                             <div class="Flashcord-Module_Info">\n\
                                 <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
-                                    <a target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
-                                    <a target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
+                                    <a onclick="{AddStat_Views}" target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
+                                    <a onclick="{AddStat_Views}" target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
                                 </div>\n\
                                 <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
                                     <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
+                                    <h5 style="margin-left: 0.25rem;">👀: {Addon_Views} // ⬇️: {Addon_Installs}</h5>\n\
                                 </div>\n\
                                 <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
                                 <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
                                 <p>{Addon_Description}</p>\n\
-                                <button class="SNDL-BC_Info">\n\
+                                <button class="SNDL-BC_Info" onclick="{AddStat_Installs}">\n\
                                     <a href="{Addon_Install}">\n\
-                                        <p>Click to Install</p>\n\
+                                        <p>⬇️ Install</p>\n\
                                     </a>\n\
                                 </button>\n\
                                 <a target="_blank" href="{Addon_GitHubRepo}"><p class="SNDL-Copyright">{Addon_Author} © {Current_Year} - {Addon_Name} | {Addon_License}</p></a>\n\
