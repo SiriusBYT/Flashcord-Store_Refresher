@@ -74,25 +74,13 @@ def Replugged_API(GetWhat):
         print(Addon_Page)
         print("\n")
         """
-        HTMLCode = HTMLCode + f'                    <div class="Replugged-Addon">\n\
-                            <img class="Replugged-Addon_Banner" src="{Addon_Image}" crossorigin="anonymous" referrerpolicy="no-referrer"></img>\n\
+        HTMLCode = HTMLCode + f'                    <div class="Replugged-Addon" id="{Addon_ID}">\n\
+                            <a onclick="{AddStat_Views}" target="_blank" href="{Addon_Image}"><img class="Replugged-Addon_Banner" src="{Addon_Image}" crossorigin="anonymous" referrerpolicy="no-referrer"></img></a>\n\
                             <div class="Flashcord-Module_Info">\n\
-                                <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
-                                    <a onclick="{AddStat_Views}" target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a>\n\
-                                    <a onclick="{AddStat_Views}" target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a>\n\
-                                </div>\n\
-                                <div class="SNDL-Quick_FlexGrid" style="justify-content: left;">\n\
-                                    <a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a>\n\
-                                    <h5 style="margin-left: 0.25rem;">👀: {Addon_Views} // ⬇️: {Addon_Installs}</h5>\n\
-                                </div>\n\
-                                <h5 style="margin-bottom: 8px;">Contributors: {Addon_Contributors}</h5>\n\
-                                <h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n\
-                                <p>{Addon_Description}</p>\n\
-                                <button class="SNDL-BC_Info" onclick="{AddStat_Installs}">\n\
-                                    <a href="{Addon_Install}" target="_blank">\n\
-                                        <p>⬇️ Install</p>\n\
-                                    </a>\n\
-                                </button>\n\
+                                <div class="SNDL-Quick_FlexGrid"><a onclick="{AddStat_Views}" target="_blank" href="{Addon_Page}"><h1>{Addon_Name}</h1></a><a onclick="{AddStat_Views}" target="_blank" href="{Addon_GitHubRepo}"><h1>💿</h1></a></div>\n\
+                                <div class="SNDL-Quick_FlexGrid"><a target="_blank" href="{Addon_AuthorGitHub}"><h2>{Addon_Author}</h2></a><h5>👀: {Addon_Views} // ⬇️: {Addon_Installs}</h5></div>\n\
+                                <h5>Contributors: {Addon_Contributors}</h5><h3 class="Flashcord-Module_Version">Version: {Addon_Version}</h3>\n<p>{Addon_Description}</p>\n\
+                                <button class="SNDL-BC_Info" onclick="{AddStat_Installs}"><a href="{Addon_Install}" target="_blank"><p>⬇️ Install</p></a></button>\n\
                                 <a target="_blank" href="{Addon_GitHubRepo}"><p class="SNDL-Copyright">{Addon_Author} © {Current_Year} - {Addon_Name} | {Addon_License}</p></a>\n\
                             </div>\n\
                     </div>\n'
