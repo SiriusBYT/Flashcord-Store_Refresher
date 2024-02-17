@@ -12,7 +12,7 @@ def Flashcord_API_Client(API_Request):
     if Debug_Offline == True:
         Server_Address = socket.gethostname()
     else:
-        Server_Address = "aura-two.sirio-network.com"
+        Server_Address = "raw_api.sirio-network.com"
     Server_Port = 1407
     Packet_Size = 8192
     Server = socket.socket()
