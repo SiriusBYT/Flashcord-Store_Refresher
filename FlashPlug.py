@@ -9,7 +9,7 @@ def Replugged_API(GetWhat):
     API = urllib.request.Request(
         RepluggedAPI, 
         data=None, 
-        headers={'User-Agent': 'Flashplug-Store/1.1'}
+        headers={'User-Agent': 'Flashplug-Store/1.2'}
     )
     API_Result = json.load(urllib.request.urlopen(API))
     API_ResultKey = API_Result["results"]
@@ -17,6 +17,8 @@ def Replugged_API(GetWhat):
     Current_Year = "2024"
 
     HTMLCode = ""
+    Views_JSON = json.loads(Flashcord_API_Client("GET/VIEWS").replace("'", '"'))
+    Installs_JSON = json.loads(Flashcord_API_Client("GET/INSTALLS").replace("'", '"'))
     for cycle in range (len(API_ResultKey)):
         Addon = Addon_Name = Addon_Description = Addon_Version = Addon_AuthorKey = Addon_Contributors = Addon_ImageKey = Addon_Image = Addon_GitHubRepo = Addon_ID = Addon_Install = Addon_Page = Addon_AuthorGitHub = ""
 
@@ -56,8 +58,8 @@ def Replugged_API(GetWhat):
         Addon_License = Addon["license"]
         Addon_Contributors = str(Addon_Contributors)
         Addon_Contributors = Addon_Contributors.replace("[","").replace("]","").replace("'","")
-        Addon_Views = Flashcord_API_Client(f"GET/VIEWS/{Addon_ID}")
-        Addon_Installs = Flashcord_API_Client(f"GET/INSTALLS/{Addon_ID}")
+        Addon_Views = Views_JSON[Addon_ID]
+        Addon_Installs = Installs_JSON[Addon_ID]
         AddStat_Views = f"Flashcord_API_Client('ADD_STAT/VIEWS/{Addon_ID}')"
         AddStat_Installs = f"Flashcord_API_Client('ADD_STAT/INSTALLS/{Addon_ID}')"
         """
