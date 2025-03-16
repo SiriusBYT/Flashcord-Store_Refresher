@@ -14,9 +14,9 @@ def Flashcord_API_Client(API_Request):
     else:
         Server_Address = "raw_api.sirio-network.com"
     Server_Port = 1407
-    Packet_Size = 8192
+    Packet_Size = 16386
     Server = socket.socket()
-    Client_Version = "r240217"
+    Client_Version = "r240406"
     Client_API_Version = "3.1"
 
     ASCII_Banner = "\n░█▀▀░█░░░█▀█░█▀▀░█░█░█▀▀░█▀█░█▀▄░█▀▄░░░█▀█░█▀█░▀█▀░░░█▀▀░█░░░▀█▀░█▀▀░█▀█░▀█▀\n\
@@ -77,13 +77,9 @@ def Flashcord_API_Client(API_Request):
         match Server_Data:
             case "INVALID_REQUEST": WriteLog(f'[ERROR] The server told us our request is invalid!',False); return "INVALID_REQUEST"
             case "MISSING_ARGUMENTS": WriteLog(f'[ERROR] The server told us our request is missing arguments!',False); return "MISSING_ARGUMENTS"
-            case "NOT_FOUND": WriteLog(f"[ERROR] The server told us our request couldn't be found!",False); return "INVALID_REQUEST"
+            case "NOT_FOUND": WriteLog(f"[ERROR] The server told us our request couldn't be found!",False); return "NOT_FOUND"
             case "ALREADY_DONE": WriteLog(f"[ERROR] The server told us our one-time request was already done!",False); return "ALREADY_DONE"
             case None: WriteLog(f"[ERROR] An unknown error occurred!",False); return "UNKNOWN_ERROR"
             case "": WriteLog(f"[ERROR] The server sent us an empty response!",False); return "EMPTY_RESPONSE"
             case _: WriteLog(f'[SUCCESS] Received {Server_Data} for our request!',False); return Server_Data
     except Exception as Error_Info: WriteLog(f'[ERROR] Failed to send our API request! \n[ERROR TRACEBACK]\n{Error_Info}", False)',False); return "TIMEOUT"
-    
-
-
-Flashcord_API_Client("GET/VIEWS")
